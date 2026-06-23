@@ -23,7 +23,7 @@
     --border: 214 32% 91%;
     --input: 214 32% 91%;
     --ring: 162 73% 46%;
-    --radius: 1rem;
+    --radius: 1.25rem;
   }
   .dark {
     --background: 210 11% 15%; /* #212529 */
@@ -53,8 +53,12 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary transition-colors duration-500;
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary transition-colors duration-500 overflow-x-hidden;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  /* Prevent horizontal scrolling on mobile */
+  html, body {
+    max-width: 100vw;
   }
 }
 
