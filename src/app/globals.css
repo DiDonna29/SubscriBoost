@@ -4,47 +4,47 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%; /* Softer, slightly blueish white */
+    --background: 210 17% 98%; /* #F8F9FA */
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 221 83% 53%; /* Professional vibrant blue */
-    --primary-foreground: 210 40% 98%;
+    --primary: 162 73% 46%; /* #20C997 - Mint */
+    --primary-foreground: 160 100% 98%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11.2%;
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 162 73% 46%;
+    --accent-foreground: 160 100% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 221 83% 53%;
-    --radius: 1rem; /* Softer corners */
+    --ring: 162 73% 46%;
+    --radius: 1rem;
   }
   .dark {
-    --background: 222 47% 6%;
+    --background: 210 11% 15%; /* #212529 */
     --foreground: 210 40% 98%;
-    --card: 222 47% 10%;
+    --card: 210 11% 18%;
     --card-foreground: 210 40% 98%;
-    --popover: 222 47% 10%;
+    --popover: 210 11% 18%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 6%;
-    --secondary: 222 47% 15%;
+    --primary: 160 61% 53%; /* #38D39F - Darker Mint */
+    --primary-foreground: 210 11% 10%;
+    --secondary: 210 11% 20%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 222 47% 15%;
+    --muted: 210 11% 20%;
     --muted-foreground: 215 20% 65%;
-    --accent: 222 47% 15%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 160 61% 53%;
+    --accent-foreground: 210 11% 10%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 210 40% 98%;
-    --border: 222 47% 15%;
-    --input: 222 47% 15%;
-    --ring: 217 91% 60%;
+    --border: 210 11% 25%;
+    --input: 210 11% 25%;
+    --ring: 160 61% 53%;
   }
 }
 
@@ -68,7 +68,6 @@
   }
 }
 
-/* Taste Skill Animations */
 @keyframes reveal {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

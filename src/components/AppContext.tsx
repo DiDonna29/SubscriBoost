@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
@@ -60,17 +59,20 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   };
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat(language === 'en' ? 'en-US' : 'es-MX', {
+    const locale = language === 'en' ? 'en-US' : 'es-ES';
+    const currency = translations[language].currency;
+    return new Intl.NumberFormat(locale, {
       style: 'currency',
-      currency: translations[language].currency,
+      currency: currency,
     }).format(amount);
   };
 
   const formatDate = (dateString: string) => {
+    const locale = language === 'en' ? 'en-US' : 'es-ES';
     const date = new Date(dateString);
-    return new Intl.DateTimeFormat(language === 'en' ? 'en-US' : 'es-MX', {
+    return new Intl.DateTimeFormat(locale, {
       day: 'numeric',
-      month: 'long',
+      month: 'short',
       year: 'numeric'
     }).format(date);
   };

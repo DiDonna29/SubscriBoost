@@ -1,4 +1,3 @@
-
 export type Language = 'en' | 'es';
 
 export const translations = {
@@ -6,6 +5,7 @@ export const translations = {
     title: 'SubscriBoost',
     subtitle: 'Manage your digital lifestyle',
     monthlyTotal: 'Total Monthly Spend',
+    projectedAnnual: 'Projected Annual Spend',
     subscriptions: 'My Subscriptions',
     addSubscription: 'Add Subscription',
     editSubscription: 'Edit Subscription',
@@ -19,6 +19,7 @@ export const translations = {
     delete: 'Delete',
     noSubscriptions: 'No subscriptions found. Start adding some!',
     confirmDelete: 'Are you sure you want to delete this subscription?',
+    chartTitle: '12-Month Spending Projection',
     categories: {
       streaming: 'Streaming',
       productivity: 'Productivity',
@@ -33,6 +34,7 @@ export const translations = {
     title: 'SubscriBoost',
     subtitle: 'Gestiona tu estilo de vida digital',
     monthlyTotal: 'Gasto Mensual Total',
+    projectedAnnual: 'Gasto Anual Proyectado',
     subscriptions: 'Mis Suscripciones',
     addSubscription: 'Añadir Suscripción',
     editSubscription: 'Editar Suscripción',
@@ -46,6 +48,7 @@ export const translations = {
     delete: 'Eliminar',
     noSubscriptions: 'No se encontraron suscripciones. ¡Comienza a añadir algunas!',
     confirmDelete: '¿Estás seguro de que deseas eliminar esta suscripción?',
+    chartTitle: 'Proyección de Gasto a 12 Meses',
     categories: {
       streaming: 'Streaming',
       productivity: 'Productividad',
@@ -53,7 +56,7 @@ export const translations = {
       utilities: 'Servicios',
       other: 'Otro'
     },
-    currency: 'MXN',
-    currencySymbol: '$'
+    currency: 'EUR',
+    currencySymbol: '€'
   }
 };
