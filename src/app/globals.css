@@ -1,51 +1,50 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 210 20% 98%; /* #F8F9FA */
-    --foreground: 210 11% 15%; /* #212529 */
-    --card: 0 0% 100%; /* #FFFFFF */
-    --card-foreground: 210 11% 15%;
+    --background: 210 40% 98%; /* Softer, slightly blueish white */
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 15%;
-    --primary: 162 73% 46%; /* #20C997 */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 162 73% 96%;
-    --secondary-foreground: 162 73% 20%;
-    --muted: 210 20% 90%;
-    --muted-foreground: 210 11% 40%;
-    --accent: 162 73% 92%;
-    --accent-foreground: 162 73% 20%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 162 73% 46%;
-    --radius: 0.75rem;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%; /* Professional vibrant blue */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    --radius: 1rem; /* Softer corners */
   }
   .dark {
-    --background: 210 11% 15%; /* #212529 */
-    --foreground: 210 20% 98%; /* #F8F9FA */
-    --card: 210 10% 23%; /* #343A40 */
-    --card-foreground: 210 20% 98%;
-    --popover: 210 10% 23%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 160 63% 52%; /* #38D39F */
-    --primary-foreground: 210 11% 15%;
-    --secondary: 210 10% 30%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 210 10% 30%;
-    --muted-foreground: 210 11% 70%;
-    --accent: 210 10% 30%;
-    --accent-foreground: 160 63% 52%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 210 10% 30%;
-    --input: 210 10% 30%;
-    --ring: 160 63% 52%;
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 222 47% 15%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 47% 15%;
+    --input: 222 47% 15%;
+    --ring: 217 91% 60%;
   }
 }
 
@@ -54,6 +53,21 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary transition-colors duration-500;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
+
+/* Taste Skill Animations */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-reveal {
+  animation: reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
