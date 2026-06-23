@@ -152,7 +152,7 @@ export default function SubscriptionManager() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 no-scrollbar">
+          <div className="flex items-center gap-3 w-full md:w-auto flex-wrap">
             <Button 
               variant="ghost" 
               size="icon" 
