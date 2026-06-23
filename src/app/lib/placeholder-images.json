@@ -1,0 +1,23 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "entertainment",
+      "description": "Streaming and movies",
+      "imageUrl": "https://picsum.photos/seed/ent/400/300",
+      "imageHint": "streaming movies"
+    },
+    {
+      "id": "productivity",
+      "description": "Software and productivity",
+      "imageUrl": "https://picsum.photos/seed/prod/400/300",
+      "imageHint": "software code"
+    },
+    {
+      "id": "gaming",
+      "description": "Video games and gaming services",
+      "imageUrl": "https://picsum.photos/seed/game/400/300",
+      "imageHint": "video games"
+    }
+  ]
+}
