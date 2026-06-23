@@ -84,18 +84,19 @@ export default function SubscriptionManager() {
   };
 
   const handleSave = () => {
-    if (!name || !cost) return;
+    const parsedCost = parseFloat(cost);
+    if (!name || isNaN(parsedCost) || parsedCost < 0) return;
 
     if (editingSub) {
       const updated = subscriptions.map(s => 
-        s.id === editingSub.id ? { ...s, name, cost: parseFloat(cost), date, category } : s
+        s.id === editingSub.id ? { ...s, name, cost: parsedCost, date, category } : s
       );
       saveToLocal(updated);
     } else {
       const newSub: Subscription = {
         id: crypto.randomUUID(),
         name,
-        cost: parseFloat(cost),
+        cost: parsedCost,
         date,
         category
       };
@@ -125,6 +126,14 @@ export default function SubscriptionManager() {
     setCost('');
     setDate(new Date().toISOString().split('T')[0]);
     setCategory('streaming');
+  };
+
+  const handleCostChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // Basic validation to prevent negative values and ensure it's numeric
+    if (value === "" || parseFloat(value) >= 0) {
+      setCost(value);
+    }
   };
 
   const filteredSubscriptions = useMemo(() => {
@@ -211,8 +220,16 @@ export default function SubscriptionManager() {
                       <Input 
                         id="cost" 
                         type="number" 
+                        min="0"
+                        step="0.01"
                         value={cost} 
-                        onChange={(e) => setCost(e.target.value)}
+                        onChange={handleCostChange}
+                        onKeyDown={(e) => {
+                          // Prevent characters that are typically used in number inputs but not allowed here
+                          if (["e", "E", "-", "+"].includes(e.key)) {
+                            e.preventDefault();
+                          }
+                        }}
                         placeholder="0.00"
                         className="rounded-xl border-border/40 h-12 px-4"
                       />
